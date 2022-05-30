@@ -1,6 +1,4 @@
 package com.example.assignment.controller;
-
-
 import com.example.assignment.entities.Course;
 import com.example.assignment.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +11,22 @@ import java.util.List;
 public class MyController {
     @Autowired
     private CourseService courseService;
+
+    @GetMapping("/")
+    public String home() {
+        return ("<h1>Welcome</h1>");
+    }
+
+    @GetMapping("/admin")
+    public String admin(){
+        return ("<h1>Welcome Admin</h1>");
+    }
+
+
+    @GetMapping("/user")
+    public String users(){
+        return ("<h1>Welcome User</h1>");
+    }
 
     @GetMapping("/courses")
     public List<Course> getCourses()
